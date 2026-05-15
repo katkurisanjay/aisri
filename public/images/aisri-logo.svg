@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" fill="none">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8C87A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9A7B1C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Face silhouette icon area -->
+  <g transform="translate(12, 8) scale(0.85)">
+    <!-- Outer hair/face silhouette shape mimicking the logo -->
+    <ellipse cx="45" cy="52" rx="38" ry="45" fill="url(#goldGrad)" opacity="0.15"/>
+    <path d="M45 12 C28 12 15 28 15 48 C15 62 22 74 33 80 C36 95 40 98 45 98 C50 98 54 95 57 80 C68 74 75 62 75 48 C75 28 62 12 45 12Z" fill="url(#goldGrad)" opacity="0.9"/>
+    <!-- Hair sweeping lines -->
+    <path d="M25 18 C10 30 8 55 18 72" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M20 22 C4 38 4 62 16 80" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <path d="M30 14 C16 26 12 50 20 68" stroke="url(#goldGrad)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+  </g>
+  <!-- Brand text -->
+  <text x="105" y="58" font-family="Georgia, serif" font-size="38" font-weight="bold" fill="url(#goldGrad)" letter-spacing="1">Aisri</text>
+  <text x="107" y="80" font-family="Georgia, serif" font-size="14" fill="#6B5B4E" letter-spacing="3.5">COSMETIC CLINIC</text>
+</svg>
