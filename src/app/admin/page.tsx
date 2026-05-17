@@ -426,10 +426,11 @@ export default function AdminDashboard() {
                         <p className="text-brown-gray/40 font-inter text-[10px] mt-2">
                           Received: {new Date(b.created_at).toLocaleDateString('en-IN', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' })}
                         </p>
-                        </div>
+                      </div>
+                    </div>
                         
-                        {/* Status + Actions - fixed width to prevent altering the main grid alignment */}
-                        <div className="flex flex-col items-start lg:items-end gap-3 w-full lg:w-[280px] shrink-0 border-t lg:border-t-0 lg:border-l border-[rgba(212,175,55,0.1)] pt-4 lg:pt-0 lg:pl-6">
+                    {/* Status + Actions - fixed width to prevent altering the main grid alignment */}
+                    <div className="flex flex-col items-start lg:items-end gap-3 w-full lg:w-[280px] shrink-0 border-t lg:border-t-0 lg:border-l border-[rgba(212,175,55,0.1)] pt-4 lg:pt-0 lg:pl-6">
                           <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-inter font-medium capitalize ${STATUS_STYLES[b.status]}`}>
                         <StatusIcon size={11} />
                         {b.status}
