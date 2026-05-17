@@ -21,10 +21,10 @@ type Booking = {
 };
 
 const STATUS_STYLES: Record<string, string> = {
-  pending:   'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
-  confirmed: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
-  completed: 'bg-green-500/10 text-green-400 border-green-500/30',
-  cancelled: 'bg-red-500/10 text-red-400 border-red-500/30',
+  pending:   'bg-yellow-100 text-yellow-700 border-yellow-300',
+  confirmed: 'bg-blue-100 text-blue-700 border-blue-300',
+  completed: 'bg-green-100 text-green-700 border-green-300',
+  cancelled: 'bg-red-100 text-red-700 border-red-300',
 };
 
 const STATUS_ICONS: Record<string, React.ElementType> = {
@@ -86,18 +86,18 @@ export default function AdminDashboard() {
 
   if (!authed) {
     return (
-      <div className="min-h-screen bg-rich-black flex items-center justify-center px-6 pt-16">
+      <div className="min-h-screen bg-ivory flex items-center justify-center px-6 pt-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="glass rounded-3xl p-10 max-w-sm w-full border border-[rgba(212,175,55,0.2)]"
+          className="bg-white rounded-3xl p-10 max-w-sm w-full border border-[rgba(212,175,55,0.3)] shadow-card"
         >
           <div className="text-center mb-8">
             <div className="w-14 h-14 rounded-full bg-gold-gradient flex items-center justify-center mx-auto mb-4">
-              <span className="text-rich-black font-playfair font-bold text-xl">A</span>
+              <span className="text-charcoal font-playfair font-bold text-xl">A</span>
             </div>
-            <h1 className="font-playfair text-2xl font-bold text-soft-cream">Admin Portal</h1>
-            <p className="text-soft-cream/40 font-inter text-xs mt-1">Aisri Cosmetic Clinic</p>
+            <h1 className="font-playfair text-2xl font-bold text-charcoal">Admin Portal</h1>
+            <p className="text-brown-gray font-inter text-xs mt-1">Aisri Cosmetic Clinic</p>
           </div>
           <form onSubmit={handleLogin} className="space-y-4">
             <input
@@ -105,11 +105,11 @@ export default function AdminDashboard() {
               placeholder="Enter admin password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full bg-[rgba(255,255,255,0.04)] border border-[rgba(212,175,55,0.15)] rounded-xl px-4 py-3 text-soft-cream font-inter text-sm placeholder:text-soft-cream/25 focus:outline-none focus:border-luxury-gold transition-all"
+              className="w-full bg-cream border border-[rgba(212,175,55,0.3)] rounded-xl px-4 py-3 text-charcoal font-inter text-sm placeholder:text-brown-gray/50 focus:outline-none focus:border-luxury-gold transition-all"
             />
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-gold-gradient text-rich-black font-semibold font-inter hover:shadow-gold-glow transition-all duration-300"
+              className="w-full py-3 rounded-xl bg-gold-gradient text-charcoal font-semibold font-inter hover:shadow-gold-glow transition-all duration-300"
             >
               Sign In
             </button>
@@ -120,13 +120,13 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-rich-black pt-8 pb-16 px-4 md:px-8">
+    <div className="min-h-screen bg-ivory pt-8 pb-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="font-playfair text-3xl font-bold text-soft-cream">Bookings Dashboard</h1>
-            <p className="text-soft-cream/40 font-inter text-sm mt-1">Aisri Cosmetic Clinic · Admin</p>
+            <h1 className="font-playfair text-3xl font-bold text-charcoal">Bookings Dashboard</h1>
+            <p className="text-brown-gray font-inter text-sm mt-1">Aisri Cosmetic Clinic · Admin</p>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -148,14 +148,14 @@ export default function AdminDashboard() {
         {/* Stats Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
-            { label: 'Total',     value: stats.total,     color: 'text-soft-cream' },
-            { label: 'Pending',   value: stats.pending,   color: 'text-yellow-400' },
-            { label: 'Confirmed', value: stats.confirmed, color: 'text-blue-400' },
-            { label: 'Completed', value: stats.completed, color: 'text-green-400' },
+            { label: 'Total',     value: stats.total,     color: 'text-charcoal' },
+            { label: 'Pending',   value: stats.pending,   color: 'text-yellow-600' },
+            { label: 'Confirmed', value: stats.confirmed, color: 'text-blue-600' },
+            { label: 'Completed', value: stats.completed, color: 'text-green-600' },
           ].map((s) => (
-            <div key={s.label} className="glass rounded-2xl p-5 border border-[rgba(212,175,55,0.1)]">
+            <div key={s.label} className="bg-white rounded-2xl p-5 border border-[rgba(212,175,55,0.2)] shadow-card">
               <p className={`font-playfair text-3xl font-bold ${s.color}`}>{s.value}</p>
-              <p className="text-soft-cream/40 font-inter text-xs uppercase tracking-wider mt-1">{s.label} Bookings</p>
+              <p className="text-brown-gray font-inter text-xs uppercase tracking-wider mt-1">{s.label} Bookings</p>
             </div>
           ))}
         </div>
@@ -169,8 +169,8 @@ export default function AdminDashboard() {
               onClick={() => setFilter(f)}
               className={`px-4 py-1.5 rounded-full border text-xs font-inter capitalize transition-all duration-200 ${
                 filter === f
-                  ? 'border-luxury-gold bg-[rgba(212,175,55,0.1)] text-luxury-gold'
-                  : 'border-[rgba(212,175,55,0.15)] text-soft-cream/50 hover:border-luxury-gold/40'
+                  ? 'border-luxury-gold bg-[rgba(212,175,55,0.15)] text-luxury-gold'
+                  : 'border-[rgba(212,175,55,0.3)] text-brown-gray hover:border-luxury-gold/60'
               }`}
             >
               {f}
@@ -190,7 +190,7 @@ export default function AdminDashboard() {
 
         {/* Bookings Table */}
         {!loading && bookings.length === 0 && (
-          <div className="text-center py-16 text-soft-cream/30 font-inter">No bookings found.</div>
+          <div className="text-center py-16 text-brown-gray/50 font-inter">No bookings found.</div>
         )}
 
         {!loading && bookings.length > 0 && (
@@ -202,7 +202,7 @@ export default function AdminDashboard() {
                   key={b.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="glass rounded-2xl p-6 border border-[rgba(212,175,55,0.1)] hover:border-[rgba(212,175,55,0.25)] transition-all duration-200"
+                  className="bg-white rounded-2xl p-6 border border-[rgba(212,175,55,0.2)] hover:border-[rgba(212,175,55,0.4)] shadow-card transition-all duration-200"
                 >
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                     {/* Main info */}
@@ -210,30 +210,30 @@ export default function AdminDashboard() {
                       <div>
                         <p className="text-luxury-gold font-playfair font-semibold text-base">{b.name}</p>
                         <div className="flex items-center gap-2 mt-1">
-                          <Phone size={11} className="text-soft-cream/40" />
-                          <a href={`tel:${b.phone}`} className="text-soft-cream/60 font-inter text-xs hover:text-luxury-gold transition-colors">{b.phone}</a>
+                          <Phone size={11} className="text-brown-gray/50" />
+                          <a href={`tel:${b.phone}`} className="text-brown-gray font-inter text-xs hover:text-luxury-gold transition-colors">{b.phone}</a>
                         </div>
                         <div className="flex items-center gap-2 mt-0.5">
-                          <Mail size={11} className="text-soft-cream/40" />
-                          <span className="text-soft-cream/60 font-inter text-xs">{b.email || '—'}</span>
+                          <Mail size={11} className="text-brown-gray/50" />
+                          <span className="text-brown-gray font-inter text-xs">{b.email || '—'}</span>
                         </div>
                       </div>
                       <div>
-                        <p className="text-soft-cream font-inter text-sm font-medium">{b.service}</p>
+                        <p className="text-charcoal font-inter text-sm font-medium">{b.service}</p>
                         <div className="flex items-center gap-2 mt-1">
-                          <Calendar size={11} className="text-soft-cream/40" />
-                          <span className="text-soft-cream/60 font-inter text-xs">{b.date}</span>
+                          <Calendar size={11} className="text-brown-gray/50" />
+                          <span className="text-brown-gray font-inter text-xs">{b.date}</span>
                         </div>
                         <div className="flex items-center gap-2 mt-0.5">
-                          <Clock size={11} className="text-soft-cream/40" />
-                          <span className="text-soft-cream/60 font-inter text-xs">{b.time}</span>
+                          <Clock size={11} className="text-brown-gray/50" />
+                          <span className="text-brown-gray font-inter text-xs">{b.time}</span>
                         </div>
                       </div>
                       <div>
                         {b.notes && (
-                          <p className="text-soft-cream/40 font-inter text-xs leading-relaxed italic">"{b.notes}"</p>
+                          <p className="text-brown-gray/60 font-inter text-xs leading-relaxed italic">"{b.notes}"</p>
                         )}
-                        <p className="text-soft-cream/25 font-inter text-[10px] mt-2">
+                        <p className="text-brown-gray/40 font-inter text-[10px] mt-2">
                           Received: {new Date(b.created_at).toLocaleDateString('en-IN', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' })}
                         </p>
                       </div>

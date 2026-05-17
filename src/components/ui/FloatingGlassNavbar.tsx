@@ -78,7 +78,7 @@ export default function FloatingGlassNavbar() {
           <div className="flex items-center gap-4">
             <a
               href="tel:9418476666"
-              className="hidden md:flex items-center gap-2 text-sm font-inter text-luxury-gold hover:text-gold-light transition-colors duration-200"
+              className="hidden md:flex items-center gap-2 text-sm font-inter text-charcoal bg-luxury-gold/20 border border-luxury-gold/40 px-3 py-1.5 rounded-full hover:bg-luxury-gold hover:text-charcoal transition-all duration-200"
             >
               <Phone size={14} />
               <span>94184 76666</span>

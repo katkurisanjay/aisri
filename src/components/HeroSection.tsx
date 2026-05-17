@@ -87,10 +87,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.7 }}
-            className="text-brown-gray font-inter text-base md:text-lg leading-relaxed max-w-lg mb-10"
+            className="inline-block bg-luxury-gold text-charcoal font-inter text-sm md:text-base leading-relaxed px-5 py-3 rounded-xl font-medium shadow-gold-sm max-w-lg mb-10"
           >
             17 premium aesthetic treatments — Laser, HydraFacial, Botox, Korean Glass Glow,
-            PRP Hair & luxury Bridal Skincare. Expert care at KSR Plaza, Hanamkonda, Warangal.
+            PRP Hair &amp; luxury Bridal Skincare. Expert care at KSR Plaza, Hanamkonda, Warangal.
           </motion.p>
 
           {/* CTAs */}
