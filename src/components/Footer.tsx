@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook, Youtube } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const services = [
   'Laser Hair Removal', 'HydraFacial / Medifacial', 'Botox & Fillers', 
@@ -40,7 +41,7 @@ export default function Footer() {
               { icon: Instagram, href: 'https://instagram.com/aisricosmeticclinic', label: 'Instagram' },
               { icon: Facebook,  href: 'https://facebook.com/aisricosmeticclinic',  label: 'Facebook' },
               { icon: Youtube,   href: 'https://youtube.com',   label: 'YouTube' },
-              { icon: MessageCircle, href: 'https://wa.me/919418476666', label: 'WhatsApp' },
+              { icon: FaWhatsapp, href: 'https://wa.me/919418476666', label: 'WhatsApp' },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

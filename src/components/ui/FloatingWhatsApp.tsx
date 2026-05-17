@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function FloatingWhatsApp() {
   const [visible, setVisible] = useState(false);
@@ -67,7 +68,7 @@ export default function FloatingWhatsApp() {
             aria-label="Chat on WhatsApp"
             className="w-14 h-14 rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgba(37,211,102,0.4)] flex items-center justify-center hover:shadow-[0_8px_40px_rgba(37,211,102,0.6)] transition-all duration-300"
           >
-            <MessageCircle size={26} fill="white" />
+            <FaWhatsapp size={30} className="text-white" />
           </motion.button>
         </motion.div>
       )}
