@@ -39,7 +39,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Masonry Grid */}
-      <section className="pb-24 px-6 md:px-8">
+      <section className="py-24 px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
             {allImages.map((img, i) => (
