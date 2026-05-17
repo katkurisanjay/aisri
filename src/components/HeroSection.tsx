@@ -23,9 +23,9 @@ export default function HeroSection() {
           sizes="100vw"
           unoptimized
         />
-        {/* Warm left-to-right overlay so text is always readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(253,246,236,0.88)] via-[rgba(253,246,236,0.55)] to-[rgba(255,251,244,0.05)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(255,251,244,0.05)] via-transparent to-[rgba(253,246,236,0.35)]" />
+        {/* Gradient overlay — lighter so image shows fully edge to edge */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(253,246,236,0.72)] via-[rgba(253,246,236,0.35)] to-[rgba(255,251,244,0.0)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(255,251,244,0.0)] via-transparent to-[rgba(253,246,236,0.25)]" />
       </div>
 
       {/* Decorative gold orbs — soft, not harsh */}
@@ -46,7 +46,7 @@ export default function HeroSection() {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 w-full px-6 md:px-12 lg:px-24 pt-32 pb-24">
+      <div className="relative z-10 w-full px-6 md:px-10 lg:px-16 pt-32 pb-24">
         <div className="max-w-2xl">
 
           {/* Rating badge */}
