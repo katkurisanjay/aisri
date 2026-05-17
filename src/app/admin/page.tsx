@@ -108,7 +108,6 @@ export default function AdminDashboard() {
             <h1 className="font-playfair text-2xl font-bold text-charcoal">Admin Portal</h1>
             <p className="text-brown-gray font-inter text-xs mt-1">Aisri Cosmetic Clinic</p>
           </div>
-          </div>
           <form onSubmit={handleLogin} className="space-y-4">
             {error && <p className="text-red-500 text-xs font-inter text-center">{error}</p>}
             <input
