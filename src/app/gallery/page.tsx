@@ -7,6 +7,10 @@ export const metadata: Metadata = {
 };
 
 const allImages = [
+  { src: '/images/gallery/IMG-20230117-WA0001.png', alt: 'Clinic Interior View', category: 'Clinic' },
+  { src: '/images/gallery/IMG-20230117-WA0004.png', alt: 'Clinic Facilities', category: 'Clinic' },
+  { src: '/images/gallery/unnamed - patient treatment.png', alt: 'Patient Treatment in Progress', category: 'Treatment' },
+  { src: '/images/gallery/unnamed123.png', alt: 'Aisri Clinic Interior', category: 'Clinic' },
   { src: '/images/gallery/interior_1.png', alt: 'Clinic Reception', category: 'Clinic' },
   { src: '/images/gallery/interior_2.png', alt: 'Treatment Room', category: 'Clinic' },
   { src: '/images/results/acne_before.png', alt: 'Acne Scar Treatment Before', category: 'Results' },
