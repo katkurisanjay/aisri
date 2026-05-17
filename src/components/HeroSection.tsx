@@ -4,24 +4,28 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ChevronDown, Star, Phone, ArrowRight } from 'lucide-react';
+import { Star, Phone, ArrowRight } from 'lucide-react';
 
 const CLINIC_HERO = 'https://images.jdmagicbox.com/comp/warangal/r3/9999px870.x870.230113113919.n2r3/catalogue/aisri-cosmetic-clinic-hanamkonda-warangal-skin-care-clinics-1co2vuhd1e.jpg';
 
 export default function HeroSection() {
-  const scrollDown = () => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" aria-label="Hero">
-      {/* Background image */}
+      {/* Background image — using next/image for reliable cross-browser rendering */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="absolute inset-0 bg-fixed bg-cover bg-center"
-          style={{ backgroundImage: `url(${CLINIC_HERO})` }}
+        <Image
+          src={CLINIC_HERO}
+          alt="Aisri Cosmetic Clinic interior — KSR Plaza, Hanamkonda"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+          unoptimized
         />
-        {/* Warm ivory/cream overlay — reduced opacity to make background image more visible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(253,246,236,0.85)] via-[rgba(253,246,236,0.6)] to-[rgba(255,251,244,0.1)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(255,251,244,0.1)] via-transparent to-[rgba(253,246,236,0.4)]" />
+        {/* Warm left-to-right overlay so text is always readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(253,246,236,0.88)] via-[rgba(253,246,236,0.55)] to-[rgba(255,251,244,0.05)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(255,251,244,0.05)] via-transparent to-[rgba(253,246,236,0.35)]" />
       </div>
 
       {/* Decorative gold orbs — soft, not harsh */}
