@@ -63,7 +63,11 @@ export default function FloatingGlassNavbar() {
                 key={link.href}
                 href={link.href}
                 className={`relative text-sm font-inter font-medium tracking-wide transition-colors duration-200 group ${
-                  pathname === link.href ? 'text-luxury-gold' : 'text-charcoal hover:text-luxury-gold'
+                  pathname === link.href
+                    ? 'text-luxury-gold'
+                    : scrolled
+                      ? 'text-charcoal hover:text-luxury-gold'
+                      : 'text-white/90 hover:text-luxury-gold drop-shadow-sm'
                 }`}
               >
                 {link.label}
@@ -75,23 +79,27 @@ export default function FloatingGlassNavbar() {
           </nav>
 
           {/* CTA + Mobile Toggle */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <a
               href="tel:9418476666"
-              className="hidden md:flex items-center gap-2 text-sm font-inter text-charcoal bg-luxury-gold/20 border border-luxury-gold/40 px-3 py-1.5 rounded-full hover:bg-luxury-gold hover:text-charcoal transition-all duration-200"
+              className={`hidden md:flex items-center gap-2 text-sm font-inter px-4 py-2 rounded-full border font-medium transition-all duration-300 ${
+                scrolled
+                  ? 'text-luxury-gold border-luxury-gold/50 bg-luxury-gold/10 hover:bg-luxury-gold hover:text-charcoal'
+                  : 'text-white border-white/50 bg-white/15 backdrop-blur-sm hover:bg-white hover:text-charcoal'
+              }`}
             >
               <Phone size={14} />
               <span>94184 76666</span>
             </a>
             <Link
               href="/book"
-              className="hidden md:inline-flex items-center px-6 py-2.5 rounded-full bg-gold-gradient text-rich-black text-sm font-semibold font-inter hover:shadow-gold-glow hover:scale-105 transition-all duration-300"
+              className="hidden md:inline-flex items-center px-6 py-2.5 rounded-full bg-gold-gradient text-charcoal text-sm font-semibold font-inter hover:shadow-gold-glow hover:scale-105 transition-all duration-300"
             >
               Book Now
             </Link>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden text-soft-cream hover:text-luxury-gold transition-colors duration-200 p-1"
+              className={`lg:hidden transition-colors duration-200 p-1 ${scrolled ? 'text-charcoal hover:text-luxury-gold' : 'text-white hover:text-luxury-gold'}`}
               aria-label="Toggle menu"
             >
               {menuOpen ? <X size={24} /> : <Menu size={24} />}
