@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Inter, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
-import FloatingGlassNavbar from '@/components/ui/FloatingGlassNavbar';
-import Footer from '@/components/Footer';
-import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
+import ConditionalLayout from '@/components/ConditionalLayout';
 import SmoothScrollProvider from '@/components/providers/SmoothScrollProvider';
 
 const playfair = Playfair_Display({
@@ -28,7 +26,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: 'Aisri Cosmetic Clinic | Premium Skin & Hair Treatments in Warangal',
   description:
-    'Aisri Cosmetic Clinic — Warangal\'s leading luxury aesthetic clinic offering Laser Hair Removal, HydraFacial, Korean Glass Glow, Botox, PRP Hair Transplant, Bridal Treatments & more. Book your consultation today.',
+    "Aisri Cosmetic Clinic — Warangal's leading luxury aesthetic clinic offering Laser Hair Removal, HydraFacial, Korean Glass Glow, Botox, PRP Hair Transplant, Bridal Treatments & more. Book your consultation today.",
   keywords: [
     'cosmetic clinic warangal', 'skin clinic hanamkonda', 'laser hair removal warangal',
     'hydrafacial warangal', 'botox fillers warangal', 'PRP hair treatment warangal',
@@ -47,10 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${playfair.variable} ${inter.variable} ${cormorant.variable}`}>
       <body>
         <SmoothScrollProvider>
-          <FloatingGlassNavbar />
-          <main>{children}</main>
-          <Footer />
-          <FloatingWhatsApp />
+          <ConditionalLayout>{children}</ConditionalLayout>
         </SmoothScrollProvider>
       </body>
     </html>
