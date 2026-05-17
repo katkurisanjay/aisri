@@ -21,23 +21,26 @@ const testimonials = [
 
 export default function TestimonialsPage() {
   return (
-    <div className="min-h-screen bg-ivory pt-24">
+    <div className="min-h-screen bg-ivory">
       {/* Header */}
-      <section className="py-16 text-center px-6">
-        <p className="text-luxury-gold font-cormorant italic text-xl mb-3">Patient Experiences</p>
-        <h1 className="font-playfair text-5xl md:text-6xl font-bold text-charcoal mb-5">
-          Real <span className="text-gold-gradient">Testimonials</span>
-        </h1>
-        <span className="gold-line" />
-
-        {/* JD Rating */}
-        <div className="inline-flex items-center gap-3 mt-8 px-6 py-3 rounded-full border border-[rgba(212,175,55,0.25)] bg-[rgba(212,175,55,0.05)]">
-          <div className="flex gap-0.5 text-luxury-gold">
-            {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
+      <section className="pt-32 pb-20 text-center px-6 bg-gradient-to-br from-[#0E5E63] via-[#0a4a4e] to-[#1C1410] relative overflow-hidden">
+        <div className="absolute top-8 left-8 w-40 h-40 rounded-full bg-luxury-gold/10 blur-2xl pointer-events-none" />
+        <div className="absolute bottom-8 right-8 w-56 h-56 rounded-full bg-luxury-gold/8 blur-3xl pointer-events-none" />
+        <div className="relative z-10">
+          <p className="text-luxury-gold font-cormorant italic text-xl mb-3">Patient Experiences</p>
+          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-white mb-5">
+            Real <span className="text-gold-gradient">Testimonials</span>
+          </h1>
+          <span className="gold-line" />
+          {/* JD Rating */}
+          <div className="inline-flex items-center gap-3 mt-8 px-6 py-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm">
+            <div className="flex gap-0.5 text-luxury-gold">
+              {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
+            </div>
+            <span className="text-white/80 font-inter text-sm">
+              <strong className="text-luxury-gold">4.6/5</strong> &middot; 151 Verified Reviews &middot; Justdial Certified
+            </span>
           </div>
-          <span className="text-brown-gray font-inter text-sm">
-            <strong className="text-luxury-gold">4.6/5</strong> · 151 Verified Reviews · Justdial Certified
-          </span>
         </div>
       </section>
 

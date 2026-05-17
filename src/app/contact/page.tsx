@@ -9,32 +9,36 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-ivory pt-24">
+    <div className="min-h-screen bg-ivory">
       {/* Header */}
-      <section className="py-12 text-center px-6">
-        <p className="text-luxury-gold font-cormorant italic text-xl mb-3">We&apos;re Here For You</p>
-        <h1 className="font-playfair text-5xl md:text-6xl font-bold text-charcoal mb-5">
-          Contact <span className="text-gold-gradient">Us</span>
-        </h1>
-        <span className="gold-line" />
-        <p className="text-brown-gray font-inter text-base max-w-lg mx-auto mt-6 leading-relaxed">
-          Visit us at KSR Plaza, Hanamkonda or reach us by phone, WhatsApp, or email. We respond quickly!
-        </p>
-        <div className="flex flex-wrap justify-center gap-4 mt-8">
-          <a href="tel:9418476666" className="inline-flex items-center px-8 py-3.5 rounded-full bg-gold-gradient text-charcoal font-semibold font-inter text-sm hover:shadow-gold-glow hover:scale-105 transition-all duration-300">
-            Call Now: 94184 76666
-          </a>
-          <a
-            href="https://wa.me/919418476666"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-3.5 rounded-full bg-[#25D366] text-white font-semibold font-inter text-sm hover:opacity-90 hover:scale-105 transition-all duration-300"
-          >
-            WhatsApp Us
-          </a>
-          <Link href="/book" className="inline-flex items-center px-8 py-3.5 rounded-full border border-[rgba(212,175,55,0.4)] text-luxury-gold font-inter text-sm hover:bg-[rgba(212,175,55,0.1)] transition-all duration-300">
-            Book Appointment
-          </Link>
+      <section className="pt-32 pb-20 text-center px-6 bg-gradient-to-br from-[#0E5E63] via-[#0a4a4e] to-[#1C1410] relative overflow-hidden">
+        <div className="absolute top-8 left-8 w-40 h-40 rounded-full bg-luxury-gold/10 blur-2xl pointer-events-none" />
+        <div className="absolute bottom-8 right-8 w-56 h-56 rounded-full bg-luxury-gold/8 blur-3xl pointer-events-none" />
+        <div className="relative z-10">
+          <p className="text-luxury-gold font-cormorant italic text-xl mb-3">We&apos;re Here For You</p>
+          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-white mb-5">
+            Contact <span className="text-gold-gradient">Us</span>
+          </h1>
+          <span className="gold-line" />
+          <p className="text-white/70 font-inter text-base max-w-lg mx-auto mt-6 leading-relaxed">
+            Visit us at KSR Plaza, Hanamkonda or reach us by phone, WhatsApp, or email. We respond quickly!
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <a href="tel:9418476666" className="inline-flex items-center px-8 py-3.5 rounded-full bg-gold-gradient text-charcoal font-semibold font-inter text-sm hover:shadow-gold-glow hover:scale-105 transition-all duration-300">
+              Call Now: 94184 76666
+            </a>
+            <a
+              href="https://wa.me/919418476666"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-3.5 rounded-full bg-[#25D366] text-white font-semibold font-inter text-sm hover:opacity-90 hover:scale-105 transition-all duration-300"
+            >
+              WhatsApp Us
+            </a>
+            <Link href="/book" className="inline-flex items-center px-8 py-3.5 rounded-full border border-white/40 text-white font-inter text-sm hover:bg-white/10 transition-all duration-300">
+              Book Appointment
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -25,20 +25,18 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-ivory pt-24">
+    <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=1920&q=85" alt="Clinic" fill className="object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-ivory" />
-        </div>
-        <div className="relative max-w-4xl mx-auto px-6 md:px-8 text-center">
+      <section className="pt-32 pb-20 text-center px-6 bg-gradient-to-br from-[#0E5E63] via-[#0a4a4e] to-[#1C1410] relative overflow-hidden">
+        <div className="absolute top-8 left-8 w-40 h-40 rounded-full bg-luxury-gold/10 blur-2xl pointer-events-none" />
+        <div className="absolute bottom-8 right-8 w-56 h-56 rounded-full bg-luxury-gold/8 blur-3xl pointer-events-none" />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <p className="text-luxury-gold font-cormorant italic text-xl mb-3">Our Story</p>
-          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-charcoal mb-6">
+          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-white mb-6">
             About <span className="text-gold-gradient">Aisri Clinic</span>
           </h1>
-          <p className="text-charcoal/80 font-inter text-lg leading-relaxed max-w-2xl mx-auto">
-            For over a decade, we've been Warangal's most trusted destination for premium cosmetic and aesthetic treatments — combining medical expertise with luxury care.
+          <p className="text-white/70 font-inter text-lg leading-relaxed max-w-2xl mx-auto">
+            For over a decade, we&apos;ve been Warangal&apos;s most trusted destination for premium cosmetic and aesthetic treatments &mdash; combining medical expertise with luxury care.
           </p>
         </div>
       </section>
