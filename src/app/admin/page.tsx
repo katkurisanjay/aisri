@@ -36,12 +36,16 @@ const STATUS_ICONS: Record<string, React.ElementType> = {
 
 export default function AdminDashboard() {
   const [authed, setAuthed] = useState(false);
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [adminKey, setAdminKey] = useState('');
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(false);
   const [filter, setFilter] = useState('all');
   const [error, setError] = useState('');
+  const [showAddAdmin, setShowAddAdmin] = useState(false);
+  const [newAdminEmail, setNewAdminEmail] = useState('');
+  const [newAdminPass, setNewAdminPass] = useState('');
 
   const fetchBookings = useCallback(async (key: string, status = 'all') => {
     setLoading(true);
@@ -58,8 +62,13 @@ export default function AdminDashboard() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    if (email !== 'admin@aisriclinic.com') {
+      setError('Invalid email address');
+      return;
+    }
     setAdminKey(password);
     setAuthed(true);
+    setError('');
     fetchBookings(password, filter);
   };
 
@@ -99,17 +108,28 @@ export default function AdminDashboard() {
             <h1 className="font-playfair text-2xl font-bold text-charcoal">Admin Portal</h1>
             <p className="text-brown-gray font-inter text-xs mt-1">Aisri Cosmetic Clinic</p>
           </div>
+          </div>
           <form onSubmit={handleLogin} className="space-y-4">
+            {error && <p className="text-red-500 text-xs font-inter text-center">{error}</p>}
+            <input
+              type="email"
+              placeholder="Admin Email (admin@aisriclinic.com)"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full bg-cream border border-[rgba(212,175,55,0.3)] rounded-xl px-4 py-3 text-charcoal font-inter text-sm placeholder:text-brown-gray/50 focus:outline-none focus:border-luxury-gold transition-all"
+              required
+            />
             <input
               type="password"
               placeholder="Enter admin password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full bg-cream border border-[rgba(212,175,55,0.3)] rounded-xl px-4 py-3 text-charcoal font-inter text-sm placeholder:text-brown-gray/50 focus:outline-none focus:border-luxury-gold transition-all"
+              required
             />
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-gold-gradient text-charcoal font-semibold font-inter hover:shadow-gold-glow transition-all duration-300"
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-[#0E5E63] to-[#1A8A8E] text-white font-semibold font-inter hover:shadow-gold-glow transition-all duration-300"
             >
               Sign In
             </button>
@@ -130,6 +150,12 @@ export default function AdminDashboard() {
           </div>
           <div className="flex items-center gap-3">
             <button
+              onClick={() => setShowAddAdmin(true)}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gold-gradient text-charcoal text-sm font-semibold font-inter hover:shadow-gold-glow transition-all duration-200"
+            >
+              Add Admin
+            </button>
+            <button
               onClick={() => fetchBookings(adminKey, filter)}
               className="p-2.5 rounded-xl border border-[rgba(212,175,55,0.2)] text-luxury-gold hover:bg-[rgba(212,175,55,0.1)] transition-all duration-200"
               aria-label="Refresh"
@@ -138,12 +164,55 @@ export default function AdminDashboard() {
             </button>
             <button
               onClick={() => { setAuthed(false); setAdminKey(''); setBookings([]); }}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[rgba(212,175,55,0.2)] text-soft-cream/60 text-sm font-inter hover:text-luxury-gold hover:border-luxury-gold transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[rgba(212,175,55,0.2)] text-brown-gray text-sm font-inter hover:text-luxury-gold hover:border-luxury-gold transition-all duration-200"
             >
               <LogOut size={14} /> Logout
             </button>
           </div>
         </div>
+
+        {/* Add Admin Modal */}
+        {showAddAdmin && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+            <div className="bg-white rounded-3xl p-8 max-w-sm w-full border border-[rgba(212,175,55,0.3)] shadow-2xl relative">
+              <button 
+                onClick={() => setShowAddAdmin(false)}
+                className="absolute top-4 right-4 text-brown-gray hover:text-charcoal"
+              >
+                <XCircle size={20} />
+              </button>
+              <h2 className="font-playfair text-2xl font-bold text-charcoal mb-2">Add New Admin</h2>
+              <p className="text-brown-gray font-inter text-xs mb-6">Create a new administrator account.</p>
+              <div className="space-y-4">
+                <input
+                  type="email"
+                  placeholder="New Admin Email"
+                  value={newAdminEmail}
+                  onChange={(e) => setNewAdminEmail(e.target.value)}
+                  className="w-full bg-cream border border-[rgba(212,175,55,0.3)] rounded-xl px-4 py-3 text-charcoal font-inter text-sm placeholder:text-brown-gray/50 focus:outline-none focus:border-luxury-gold transition-all"
+                />
+                <input
+                  type="password"
+                  placeholder="Create Password"
+                  value={newAdminPass}
+                  onChange={(e) => setNewAdminPass(e.target.value)}
+                  className="w-full bg-cream border border-[rgba(212,175,55,0.3)] rounded-xl px-4 py-3 text-charcoal font-inter text-sm placeholder:text-brown-gray/50 focus:outline-none focus:border-luxury-gold transition-all"
+                />
+                <button
+                  onClick={() => {
+                    alert('Admin created successfully! (Mock data)');
+                    setShowAddAdmin(false);
+                    setNewAdminEmail('');
+                    setNewAdminPass('');
+                  }}
+                  className="w-full py-3 rounded-xl bg-gold-gradient text-charcoal font-semibold font-inter hover:shadow-gold-glow transition-all duration-300"
+                >
+                  Create Admin
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Stats Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
