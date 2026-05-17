@@ -67,7 +67,9 @@ export default function FloatingGlassNavbar() {
                     ? 'text-luxury-gold'
                     : scrolled
                       ? 'text-charcoal hover:text-luxury-gold'
-                      : 'text-white/90 hover:text-luxury-gold drop-shadow-sm'
+                      : pathname === '/'
+                        ? 'text-charcoal hover:text-luxury-gold'
+                        : 'text-white/90 hover:text-luxury-gold drop-shadow-sm'
                 }`}
               >
                 {link.label}
@@ -83,7 +85,7 @@ export default function FloatingGlassNavbar() {
             <a
               href="tel:9418476666"
               className={`hidden md:flex items-center gap-2 text-sm font-inter px-4 py-2 rounded-full border font-medium transition-all duration-300 ${
-                scrolled
+                scrolled || pathname === '/'
                   ? 'text-luxury-gold border-luxury-gold/50 bg-luxury-gold/10 hover:bg-luxury-gold hover:text-charcoal'
                   : 'text-white border-white/50 bg-white/15 backdrop-blur-sm hover:bg-white hover:text-charcoal'
               }`}
@@ -99,7 +101,7 @@ export default function FloatingGlassNavbar() {
             </Link>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`lg:hidden transition-colors duration-200 p-1 ${scrolled ? 'text-charcoal hover:text-luxury-gold' : 'text-white hover:text-luxury-gold'}`}
+              className={`lg:hidden transition-colors duration-200 p-1 ${scrolled || pathname === '/' ? 'text-charcoal hover:text-luxury-gold' : 'text-white hover:text-luxury-gold'}`}
               aria-label="Toggle menu"
             >
               {menuOpen ? <X size={24} /> : <Menu size={24} />}
