@@ -19,7 +19,7 @@ export default function HeroSection() {
           alt="Aisri Cosmetic Clinic interior — KSR Plaza, Hanamkonda"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center scale-[1.03] -translate-x-[10px]"
           sizes="100vw"
           unoptimized
         />
