@@ -19,7 +19,7 @@ export default function HeroSection() {
           alt="Aisri Cosmetic Clinic interior — KSR Plaza, Hanamkonda"
           fill
           priority
-          className="object-cover object-center scale-[1.03] -translate-x-[10px]"
+          className="object-cover object-center scale-[1.03] -translate-x-[12px]"
           sizes="100vw"
           unoptimized
         />
@@ -129,8 +129,8 @@ export default function HeroSection() {
           >
             {[
               { label: '5,000+', sub: 'Happy Patients' },
-              { label: '10+',    sub: 'Years Experience' },
-              { label: '17',     sub: 'Treatments' },
+              { label: '10+', sub: 'Years Experience' },
+              { label: '17', sub: 'Treatments' },
             ].map((s) => (
               <div key={s.label} className="text-center bg-white/70 backdrop-blur-sm rounded-2xl px-5 py-3 shadow-card border border-[rgba(212,175,55,0.2)]">
                 <p className="font-playfair text-2xl font-bold text-gold-gradient">{s.label}</p>
