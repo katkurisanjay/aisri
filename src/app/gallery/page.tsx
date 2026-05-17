@@ -7,18 +7,16 @@ export const metadata: Metadata = {
 };
 
 const allImages = [
-  { src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=85', alt: 'Clinic Interior', category: 'Clinic' },
-  { src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=85', alt: 'HydraFacial Treatment', category: 'Treatment' },
-  { src: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=85', alt: 'Laser Treatment', category: 'Treatment' },
-  { src: 'https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=800&q=85', alt: 'Treatment Room', category: 'Clinic' },
-  { src: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=85', alt: 'Skin Consultation', category: 'Treatment' },
-  { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=85', alt: 'Bridal Treatment', category: 'Treatment' },
-  { src: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&q=85', alt: 'Hair Treatment', category: 'Treatment' },
-  { src: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&q=85', alt: 'Korean Glass Glow', category: 'Treatment' },
-  { src: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=85', alt: 'Hair Care', category: 'Treatment' },
-  { src: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=85', alt: 'Doctor Consultation', category: 'Team' },
-  { src: 'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=800&q=85', alt: 'Skincare Treatment', category: 'Treatment' },
-  { src: 'https://images.unsplash.com/photo-1612417101802-40f91de29b4f?w=800&q=85', alt: 'Beauty Treatment', category: 'Treatment' },
+  { src: '/images/gallery/interior_1.png', alt: 'Clinic Reception', category: 'Clinic' },
+  { src: '/images/gallery/interior_2.png', alt: 'Treatment Room', category: 'Clinic' },
+  { src: '/images/results/acne_before.png', alt: 'Acne Scar Treatment Before', category: 'Results' },
+  { src: '/images/results/acne_after.png', alt: 'Acne Scar Treatment After', category: 'Results' },
+  { src: '/images/gallery/interior_3.png', alt: 'Consultation Room', category: 'Clinic' },
+  { src: '/images/results/bright_before.png', alt: 'Skin Brightening Before', category: 'Results' },
+  { src: '/images/results/bright_after.png', alt: 'Skin Brightening After', category: 'Results' },
+  { src: '/images/gallery/interior_4.png', alt: 'Product Display', category: 'Clinic' },
+  { src: '/images/results/hair_before.png', alt: 'PRP Hair Loss Before', category: 'Results' },
+  { src: '/images/results/hair_after.png', alt: 'PRP Hair Regrowth After', category: 'Results' },
 ];
 
 export default function GalleryPage() {

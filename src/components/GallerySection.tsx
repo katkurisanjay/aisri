@@ -25,19 +25,19 @@ const images = [
     unoptimized: true,
   },
   {
-    src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80',
-    alt: 'HydraFacial Treatment',
-    category: 'Treatment',
+    src: '/images/results/acne_before.png',
+    alt: 'Acne Scar Treatment Before',
+    category: 'Results',
   },
   {
-    src: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80',
-    alt: 'Laser Treatment Session',
-    category: 'Treatment',
+    src: '/images/gallery/interior_1.png',
+    alt: 'Clinic Consultation Area',
+    category: 'Clinic',
   },
   {
-    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80',
-    alt: 'Bridal Treatment Package',
-    category: 'Treatment',
+    src: '/images/results/bright_after.png',
+    alt: 'Skin Brightening After',
+    category: 'Results',
   },
 ];
 

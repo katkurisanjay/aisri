@@ -5,12 +5,8 @@ import Image from 'next/image';
 import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, MessageCircle } from 'lucide-react';
 
 const services = [
-  'Laser Hair Removal', 'Acne & Acne Scars', 'Skin Lightening',
-  'Korean Glass Glow', 'Botox & Fillers', 'HydraFacial / Medifacial',
-  'PRP / GFC Hair Transplant', 'MNRF', 'Chemical Peels',
-  'IV Infusions / Glutathione', 'Laser Photo Facial', 'Face Lifting',
-  'Targeted Fat Lypolysis', 'Moles & Warts Removal', 'Bridal Skincare',
-  'Open Pores & Stretch Marks', 'Anti-Dandruff Treatment',
+  'Laser Hair Removal', 'HydraFacial / Medifacial', 'Botox & Fillers', 
+  'PRP / GFC Hair Transplant', 'Korean Glass Glow', 'Bridal Skincare',
 ];
 
 const quickLinks = [
@@ -93,6 +89,14 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li className="pt-3 mt-3 border-t border-[rgba(212,175,55,0.1)]">
+              <Link
+                href="/treatments"
+                className="text-sm font-inter text-luxury-gold hover:text-white transition-colors duration-200 flex items-center gap-2 group font-medium"
+              >
+                View All Treatments <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+            </li>
           </ul>
         </div>
 
