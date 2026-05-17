@@ -13,11 +13,11 @@ const services = [
   'Vaginal Tightening', 'Targeted Fat Lypolysis', 'Stretch Marks Reduction',
 ];
 
-const timeSlots = [
-  '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM',
-  '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM', '04:00 PM', '04:30 PM',
-  '05:00 PM', '05:30 PM', '06:00 PM', '06:30 PM',
-];
+const timeSlots = {
+  Morning: ['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM'],
+  Afternoon: ['12:00 PM', '12:30 PM', '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM'],
+  Evening: ['04:00 PM', '04:30 PM', '05:00 PM', '05:30 PM', '06:00 PM', '06:30 PM'],
+};
 
 const steps = [
   { id: 1, label: 'Service',   icon: Stethoscope },
@@ -27,7 +27,7 @@ const steps = [
 ];
 
 interface FormData {
-  service: string;
+  services: string[];
   date: string;
   time: string;
   name: string;
@@ -41,7 +41,7 @@ export default function BookPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState<FormData>({
-    service: '', date: '', time: '', name: '', phone: '', email: '', notes: '',
+    services: [], date: '', time: '', name: '', phone: '', email: '', notes: '',
   });
 
   const today = new Date().toISOString().split('T')[0];
@@ -77,7 +77,7 @@ export default function BookPage() {
           <h2 className="font-playfair text-3xl font-bold text-charcoal mb-3">Booking Confirmed!</h2>
           <p className="text-brown-gray font-inter text-sm leading-relaxed mb-4">
             Thank you, <strong className="text-charcoal">{form.name}</strong>! Your appointment request for
-            <strong className="text-luxury-gold"> {form.service}</strong> on <strong className="text-luxury-gold">{form.date}</strong> at <strong className="text-luxury-gold">{form.time}</strong> has been received.
+            <strong className="text-luxury-gold"> {form.services.join(', ')}</strong> on <strong className="text-luxury-gold">{form.date}</strong> at <strong className="text-luxury-gold">{form.time}</strong> has been received.
           </p>
           <p className="text-brown-gray font-inter text-xs mb-8">
             Our team will confirm your appointment shortly via call or WhatsApp on <strong className="text-charcoal">{form.phone}</strong>.
@@ -137,19 +137,30 @@ export default function BookPage() {
             {/* Step 1: Service */}
             {step === 1 && (
               <div>
-                <h3 className="font-playfair text-xl font-semibold text-charcoal mb-6">Select Treatment</h3>
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="font-playfair text-xl font-semibold text-charcoal">Select Treatments</h3>
+                  <span className="text-xs font-inter text-brown-gray/60 bg-[rgba(212,175,55,0.1)] px-3 py-1 rounded-full border border-[rgba(212,175,55,0.2)]">
+                    {form.services.length} selected
+                  </span>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-80 overflow-y-auto pr-2">
                   {services.map((s) => (
                     <button
                       key={s}
-                      onClick={() => setForm({ ...form, service: s })}
-                      className={`text-left px-4 py-3 rounded-xl border font-inter text-sm transition-all duration-200 ${
-                        form.service === s
+                      onClick={() => setForm({
+                        ...form,
+                        services: form.services.includes(s)
+                          ? form.services.filter(item => item !== s)
+                          : [...form.services, s]
+                      })}
+                      className={`text-left px-4 py-3 rounded-xl border font-inter text-sm transition-all duration-200 flex items-center justify-between ${
+                        form.services.includes(s)
                           ? 'border-luxury-gold bg-[rgba(212,175,55,0.1)] text-luxury-gold'
                           : 'border-[rgba(212,175,55,0.12)] text-brown-gray hover:border-[rgba(212,175,55,0.3)] hover:text-charcoal'
                       }`}
                     >
                       {s}
+                      {form.services.includes(s) && <Check size={16} className="text-luxury-gold" />}
                     </button>
                   ))}
                 </div>
@@ -170,23 +181,28 @@ export default function BookPage() {
                     className="w-full bg-ivory border border-[rgba(212,175,55,0.2)] rounded-xl px-4 py-3 text-charcoal font-inter text-sm focus:outline-none focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold/30 transition-all"
                   />
                 </div>
-                <div>
-                  <label className="block text-brown-gray/80 text-xs font-inter uppercase tracking-wider mb-3">Preferred Time</label>
-                  <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                    {timeSlots.map((t) => (
-                      <button
-                        key={t}
-                        onClick={() => setForm({ ...form, time: t })}
-                        className={`py-2 px-3 rounded-xl border font-inter text-xs transition-all duration-200 ${
-                          form.time === t
-                            ? 'border-luxury-gold bg-[rgba(212,175,55,0.1)] text-luxury-gold'
-                            : 'border-[rgba(212,175,55,0.12)] text-brown-gray hover:border-[rgba(212,175,55,0.3)]'
-                        }`}
-                      >
-                        {t}
-                      </button>
-                    ))}
-                  </div>
+                <div className="space-y-4">
+                  <label className="block text-brown-gray/80 text-xs font-inter uppercase tracking-wider mb-2">Preferred Time</label>
+                  {Object.entries(timeSlots).map(([period, slots]) => (
+                    <div key={period} className="mb-4">
+                      <p className="text-xs font-inter text-charcoal font-medium mb-2">{period}</p>
+                      <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                        {slots.map((t) => (
+                          <button
+                            key={t}
+                            onClick={() => setForm({ ...form, time: t })}
+                            className={`py-2 px-3 rounded-xl border font-inter text-xs transition-all duration-200 ${
+                              form.time === t
+                                ? 'border-luxury-gold bg-[rgba(212,175,55,0.1)] text-luxury-gold'
+                                : 'border-[rgba(212,175,55,0.12)] text-brown-gray hover:border-[rgba(212,175,55,0.3)]'
+                            }`}
+                          >
+                            {t}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
@@ -231,7 +247,7 @@ export default function BookPage() {
                 <h3 className="font-playfair text-xl font-semibold text-charcoal mb-6">Confirm Booking</h3>
                 <div className="space-y-3 mb-8">
                   {[
-                    { label: 'Treatment',     value: form.service },
+                    { label: 'Treatments',    value: form.services.join(', ') },
                     { label: 'Date',          value: form.date },
                     { label: 'Time',          value: form.time },
                     { label: 'Name',          value: form.name },
@@ -264,7 +280,7 @@ export default function BookPage() {
               <button
                 onClick={step < 4 ? () => setStep(step + 1) : handleSubmit}
                 disabled={
-                  (step === 1 && !form.service) ||
+                  (step === 1 && form.services.length === 0) ||
                   (step === 2 && (!form.date || !form.time)) ||
                   (step === 3 && (!form.name || !form.phone || !form.email)) ||
                   loading
