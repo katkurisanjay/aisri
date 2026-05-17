@@ -13,7 +13,7 @@ const services = [
     title: 'Laser Hair Removal',
     desc: 'Advanced IPL/diode laser for permanent hair reduction on face, body, and sensitive areas.',
     // IPL laser device on skin — exact match
-    image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80',
+    image: '/images/treatments/laser_hair_removal.png',
     tag: 'Most Popular',
     tagColor: 'bg-luxury-gold text-rich-black',
   },
@@ -22,7 +22,7 @@ const services = [
     title: 'Acne & Acne Scars',
     desc: 'Targeted protocols combining peels, MNRF, and lasers to treat active acne and stubborn scarring.',
     // Close-up of skin with acne/blemishes treatment
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80',
+    image: '/images/treatments/hydrafacial.png',
     tag: '',
     tagColor: '',
   },
@@ -31,7 +31,7 @@ const services = [
     title: 'Skin Lightening',
     desc: 'Medical-grade brightening treatments for uneven skin tone, dark spots, hyperpigmentation.',
     // Glowing, brightened, even-toned skin
-    image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80',
+    image: '/images/treatments/korean_glass_glow.png',
     tag: '',
     tagColor: '',
   },
@@ -40,7 +40,7 @@ const services = [
     title: 'Face Lifting',
     desc: 'Non-surgical HIFU & thread-based face lifting for a youthful, contoured appearance.',
     // Facial treatment / lifting procedure
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80',
+    image: '/images/treatments/botox_fillers.png',
     tag: '',
     tagColor: '',
   },
@@ -49,7 +49,7 @@ const services = [
     title: 'Korean Glass Glow',
     desc: 'K-beauty multi-step glass skin protocol delivering a radiant, lit-from-within luminosity.',
     // Glass skin / glowing Korean beauty result
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80',
+    image: '/images/treatments/korean_glass_glow.png',
     tag: 'Trending',
     tagColor: 'bg-deep-teal text-white',
   },
@@ -58,7 +58,7 @@ const services = [
     title: 'Hair Loss — PRP, GFC & Hair Transplant',
     desc: 'PRP, GFC growth factor therapy, and advanced hair transplant techniques to restore hair growth.',
     // Scalp injection / PRP hair treatment
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80',
+    image: '/images/treatments/prp_hair.png',
     tag: 'Advanced',
     tagColor: 'bg-deep-teal text-white',
   },
@@ -67,7 +67,7 @@ const services = [
     title: 'Anti-Dandruff Treatment',
     desc: 'Medical scalp treatments to permanently eliminate dandruff and restore healthy scalp balance.',
     // Scalp/hair care treatment session
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+    image: '/images/treatments/prp_hair.png',
     tag: '',
     tagColor: '',
   },
@@ -76,7 +76,7 @@ const services = [
     title: 'IV Infusions — Glutathione',
     desc: 'Intravenous vitamin & glutathione drips for deep skin brightening, detox, and radiant glow.',
     // IV drip/infusion medical setup
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80',
+    image: '/images/treatments/botox_fillers.png',
     tag: '',
     tagColor: '',
   },
@@ -85,7 +85,7 @@ const services = [
     title: 'Bridal Skincare & Treatments',
     desc: 'Custom pre-wedding packages to get you glowing, even-toned, and camera-ready for your big day.',
     // Bride beauty/skincare treatment
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80',
+    image: '/images/treatments/bridal_skincare.png',
     tag: 'Special',
     tagColor: 'bg-feminine-pink text-rich-black',
   },
@@ -94,7 +94,7 @@ const services = [
     title: 'Anti-Aging — Botox & Fillers',
     desc: 'FDA-approved Botox and hyaluronic acid fillers for wrinkle smoothing and facial contouring.',
     // Injection near the face/lip area
-    image: 'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80',
+    image: '/images/treatments/botox_fillers.png',
     tag: 'Premium',
     tagColor: 'bg-luxury-gold text-rich-black',
   },
@@ -103,7 +103,7 @@ const services = [
     title: 'Medifacial / HydraFacial / Vampire Facial',
     desc: 'Deep-cleansing vortex facial, PRP vampire facial, and medifacial for total skin renewal.',
     // HydraFacial machine being used on a patient
-    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80',
+    image: '/images/treatments/hydrafacial.png',
     tag: 'Best Seller',
     tagColor: 'bg-luxury-gold text-rich-black',
   },
@@ -112,7 +112,7 @@ const services = [
     title: 'Laser Photo Facial',
     desc: 'IPL photo rejuvenation to treat sun damage, redness, pigmentation and restore youthful skin.',
     // Laser light device on face
-    image: 'https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=600&q=80',
+    image: '/images/treatments/laser_hair_removal.png',
     tag: '',
     tagColor: '',
   },
@@ -121,7 +121,7 @@ const services = [
     title: 'Micro Needling Radio Frequency (MNRF)',
     desc: 'Gold-tipped microneedling combined with RF energy for deep skin remodeling and tightening.',
     // Microneedling device close-up on skin
-    image: 'https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=600&q=80',
+    image: '/images/treatments/laser_hair_removal.png',
     tag: 'Advanced',
     tagColor: 'bg-deep-teal text-white',
   },
@@ -130,7 +130,7 @@ const services = [
     title: 'Chemical Peels',
     desc: 'TCA, glycolic, and salicylic peels for deep exfoliation, glow, and skin resurfacing.',
     // Chemical peel treatment application
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80',
+    image: '/images/treatments/hydrafacial.png',
     tag: '',
     tagColor: '',
   },
@@ -139,7 +139,7 @@ const services = [
     title: 'Targeted Fat Lypolysis',
     desc: 'Non-surgical spot fat reduction using advanced lipolysis injections and contouring technology.',
     // Body contouring / fat treatment
-    image: 'https://images.unsplash.com/photo-1574482620826-40685ca5edef?w=600&q=80',
+    image: '/images/treatments/laser_hair_removal.png',
     tag: '',
     tagColor: '',
   },
@@ -148,7 +148,7 @@ const services = [
     title: 'Open Pores & Stretch Marks Reduction',
     desc: 'Combined laser and RF treatments to tighten pores and fade stretch marks effectively.',
     // Skin texture / pores close-up
-    image: 'https://images.unsplash.com/photo-1607008829749-c0f284a49fc7?w=600&q=80',
+    image: '/images/treatments/korean_glass_glow.png',
     tag: '',
     tagColor: '',
   },
@@ -157,7 +157,7 @@ const services = [
     title: 'Moles & Warts Removal',
     desc: 'Safe, precise laser removal of moles, skin tags, warts, and DPN with minimal downtime.',
     // Laser skin tag / spot removal
-    image: 'https://images.unsplash.com/photo-1612417101802-40f91de29b4f?w=600&q=80',
+    image: '/images/treatments/laser_hair_removal.png',
     tag: '',
     tagColor: '',
   },

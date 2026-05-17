@@ -7,20 +7,20 @@ const cases = [
   {
     id: 1,
     label: 'Acne Scar Treatment',
-    before: 'https://images.unsplash.com/photo-1612417101802-40f91de29b4f?w=600&q=80',
-    after:  'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80',
+    before: '/images/results/acne_before.png',
+    after:  '/images/results/acne_after.png',
   },
   {
     id: 2,
     label: 'Skin Brightening',
-    before: 'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80',
-    after:  'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80',
+    before: '/images/results/bright_before.png',
+    after:  '/images/results/bright_after.png',
   },
   {
     id: 3,
     label: 'Hair Restoration (PRP)',
-    before: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80',
-    after:  'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+    before: '/images/results/hair_before.png',
+    after:  '/images/results/hair_after.png',
   },
 ];
 
